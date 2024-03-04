@@ -16,7 +16,3 @@ def conexao_bd():
 #Notificações padrão
 
 #Notificações de erro
-
-
-
-Fluxograma
