@@ -1,4 +1,5 @@
 from Polimorfismos import conexao_bd
+from FrontNotiicar import tela_erro
 def validar_login(user,senha):
 
     conexao = conexao_bd() #coloca a variável que retorna de "conexão_bd()" dentro da variável "conexão"
@@ -10,24 +11,20 @@ def validar_login(user,senha):
 
     #validação se o usuario está correto
     if retorno is None:
-        print('usuario incorreto')
+        tela_erro('usuario incorreto')
 
     else:
         # validação se o usuario está ativado ou desativado
         if retorno[2] is None:
-            print('Usuario ativado')
 
             # validação de senha
             if retorno[1] != senha:
-                print('senha incorreta')
+                tela_erro('senha incorreta')
             else:
                 print(f'está logado, seja bem vindo(a) {retorno[3]}')
 
         else:
-            print('usuario desativado')
-
-
-
+            tela_erro('usuario desativado')
 
 
 
