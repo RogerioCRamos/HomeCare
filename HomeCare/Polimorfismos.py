@@ -15,8 +15,4 @@ def conexao_bd():
 
 #Notificações padrão
 
-
 #Notificações de erro
-
-#Notificações de erro
-
