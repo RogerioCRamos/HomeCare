@@ -1,5 +1,5 @@
 from Polimorfismos import conexao_bd
-from FrontNotiicar import tela_erro
+from FrontNotificar import tela_erro
 def validar_login(user,senha):
 
     conexao = conexao_bd() #coloca a variável que retorna de "conexão_bd()" dentro da variável "conexão"

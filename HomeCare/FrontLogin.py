@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 from BackLogin import *
 from Polimorfismos import *
-from FrontNotiicar import tela_notificar
+from FrontNotificar import tela_notificar
 
 def tela_login():
 
