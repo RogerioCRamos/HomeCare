@@ -1,4 +1,9 @@
 from BackMaterial import *
 
 
-cad_uso_material('pomada', 2, "2024-03-10 12:00:00")
+qtatual = consulta_quantidade_material(1234, "frutaina")
+
+if qtatual < 3:
+    print('tudo certo')
+else:
+    print('tudo errado')

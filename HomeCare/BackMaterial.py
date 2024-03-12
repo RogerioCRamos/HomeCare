@@ -20,14 +20,13 @@ def consulta_quantidade_material(codigo, material):
     cursor = conexao.cursor()
     cursor.execute(f'SELECT quantidade FROM tb_material WHERE cod_material = "{codigo}" AND nome_material = "{material}" ')
     retorno = cursor.fetchall()
-
     lista_material = list(it.chain(*retorno))
     lista_material = sum(lista_material)
     print(lista_material)
-
     cursor.close()
+    return lista_material
 
-def cad_uso_material(material, qt_utilizada, dt_uso):
+def cad_uso_material(material, qt_utilizada):
     conexao = conexao_bd()
     cursor = conexao.cursor()
     cursor.execute(f'SELECT cod_material , nome_material, un_medida FROM tb_material WHERE nome_material = "{material}"')
@@ -36,7 +35,7 @@ def cad_uso_material(material, qt_utilizada, dt_uso):
     if retorno is not None:
         cursor.fetchall()
         cursor.execute(f'''INSERT INTO tb_usomaterial (cod_material, quantidade_utilizada, dt_uso) 
-        VALUES ("{retorno[0]}","{qt_utilizada}","{dt_uso}")
+        VALUES ("{retorno[0]}","{qt_utilizada}", CURRENT_TIMESTAMP())
         ''')
         conexao.commit()
         tela_erro(f'Cadastro de utilização de {qt_utilizada} {retorno[2]}(s) de {material} realizado com sucesso')
