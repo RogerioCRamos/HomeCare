@@ -136,8 +136,6 @@ def tela_uso_material():
                 tela_erro(f'{e}')
 
 
-tela_uso_material()
-
 
 
 
