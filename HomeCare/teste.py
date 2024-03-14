@@ -1,9 +1,3 @@
-from BackMaterial import *
+from BackVisitaMedica import *
 
-
-qtatual = consulta_quantidade_material(1234, "frutaina")
-
-if qtatual < 3:
-    print('tudo certo')
-else:
-    print('tudo errado')
+cad_visita_medica('rog', 1, "teste visita 2")
