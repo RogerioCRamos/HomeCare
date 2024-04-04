@@ -21,8 +21,8 @@ def buscar_visita_medica(cod_visita):
     cursor.close()
 
     for dados in retorno:
-        resuldado = dados
-        print(resuldado)
+        resultado = dados
+        print(resultado)
 
 
 def editar_visita_medica(cod_visita, observacoes):
